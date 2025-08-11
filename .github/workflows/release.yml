@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: true
-          token: '${{ secrets.GITHUB_TOKEN }}'
+          token: '${{ secrets.AGITATOR_DISTRIBUTE_KEY_REPO_TOKEN }}'
       - name: install dependencies (ubuntu only)
         if: matrix.platform == 'ubuntu-22.04' # This must match the platform value defined above.
         run: |
