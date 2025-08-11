@@ -15,7 +15,9 @@ function App() {
     }
 
     const update = async () => {
-        const update = await check();
+        const update = await check({
+            proxy: "http://127.0.0.1:10809"
+        });
 
         if (update) {
             console.log(update.currentVersion);
@@ -26,7 +28,7 @@ function App() {
             let downloaded = 0;
             let contentLength: number | undefined = 0;
             // alternatively we could also call update.download() and update.install() separately
-            await update.downloadAndInstall((event) => {
+            await update.download((event) => {
                 switch (event.event) {
                     case 'Started':
                         contentLength = event.data.contentLength;
@@ -44,6 +46,12 @@ function App() {
 
             console.log('update installed');
         }
+        return update;
+    }
+
+    async function update_install() {
+        const updater = await update();
+        await updater?.install()
     }
 
     return (
@@ -76,6 +84,7 @@ function App() {
                     placeholder="Enter a name..."
                 />
                 <button type="submit" onClick={update}>Update</button>
+                <button type="submit" onClick={update_install}>Update INSTALL</button>
             </form>
             <p>{greetMsg}</p>
         </main>

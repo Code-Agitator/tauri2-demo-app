@@ -1,7 +1,7 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "tauri-app",
-  "version": "0.2.1",
+  "version": "0.3.1",
   "identifier": "com.tauri-app.tauri-app",
   "build": {
     "beforeDevCommand": "pnpm dev",
@@ -35,10 +35,9 @@
   },
   "plugins": {
     "updater": {
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEQwNjE4OTMxNTdDQ0I4MkUKUldRdXVNeFhNWWxoME5uT1BLemhZUEF5MTZoa1NMMXZ1TVd4eVpxeDh5bnJ2REVpS1lmZllLMlUK",
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEI4OEE4N0YyNjEwNkE5RDEKUldUUnFRWmg4b2VLdUZHWEVTNVN0YnJteSt4TmkxSDUyL2lxSjdKYy8vSU1XTElUZWFaNG8vZ0wK",
       "endpoints": [
-        "https://releases.myapp.com/{{target}}/{{arch}}/{{current_version}}",
-        "https://github.com/user/repo/releases/latest/download/latest.json"
+        "https://github.com/Code-Agitator/tauri2-demo-app/releases/latest/download/latest.json"
       ],
       "windows": {
         "installMode": "basicUi"
